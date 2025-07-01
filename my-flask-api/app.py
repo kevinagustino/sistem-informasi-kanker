@@ -9,3 +9,7 @@ def submit():
         "message": "Success",
         "data": data
     })
+
+@app.route("/", methods=["GET"])
+def home():
+    return "Server is running!"
