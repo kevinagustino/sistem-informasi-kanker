@@ -1,6 +1,11 @@
-from flask import Flask
+from flask import Flask, request, jsonify
+
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Hello from Railway!'
+@app.route("/submit", methods=["POST"])
+def submit():
+    data = request.get_json()
+    return jsonify({
+        "message": "Success",
+        "data": data
+    })
